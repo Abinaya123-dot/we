@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nagercoil Builder</title>
+  <style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #461180;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; }
+    nav {
+      background: #17238e;
+      padding: 1em;
+      text-align:right;
+    } 
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+ body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #b5aab9;
+    }
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn.book {
+      background-color: #007bff;
+    }
+        section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+
+     .services-section {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .services-section h1 {
+      font-size: 2.4em;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .service-content {
+      padding: 15px;
+    }
+
+    .service-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 8px;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 480px) {
+      .services-section h1 {
+        font-size: 1.6em;
+      }
+    }
+.why-section {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2em;
+      color: #222;
+      margin-bottom: 40px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .why-card {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .why-icon {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #007bff;
+    }
+
+    .why-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .why-desc {
+      font-size: 14px;
+      color: #666;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      .why-icon {
+        font-size: 28px;
+      }
+    }
+     h2 {
+      text-align: center;
+      font-size: 2.4em;
+      color: #222;
+      margin-bottom: 30px;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-title {
+      padding: 15px;
+      font-weight: bold;
+      font-size: 1em;
+      text-align: center;
+      color: #007bff;
+    }
+
+    header {
+      background: #1d3557;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .milestones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .milestone {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin: 15px;
+      width: 300px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .milestone:hover {
+      transform: scale(1.03);
+    }
+    .milestone img {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+    .milestone-content {
+      padding: 15px;
+    }
+    .milestone h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #333;
+    }
+    .milestone p {
+      font-size: 14px;
+      color: #666;
+    }
+    
+     h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .pricing-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .pricing-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .plan-details {
+      padding: 20px;
+    }
+
+    .plan-title {
+      font-size: 20px;
+      margin: 10px 0;
+      color: #222;
+    }
+
+    .plan-price {
+      font-size: 24px;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .star-rating {
+      color: #fbc02d;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 500px) {
+      .plan-title {
+        font-size: 18px;
+      }
+
+      .plan-price {
+        font-size: 20px;
+      }
+    }
+   
+  h1 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 40px;
+    }
+
+    .review-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .review-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #007bff;
+    }
+
+    .review-name {
+      font-weight: bold;
+      margin: 8px 0;
+      color: #333;
+    }
+
+    .review-text {
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .star-rating {
+      color: #fbc02d;
+      font-size: 16px;
+    }
+
+    @media (max-width: 480px) {
+      .review-text {
+        font-size: 13px;
+      }
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    form input, form select, form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    form button {
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #218838;
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 2px solid green;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    #popup.show {
+      display: block;
+    }
+body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+ * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .footer {
+      background-color: #211075;
+      color: #fff;
+      padding: 40px 20px 20px 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-section {
+      flex: 1 1 250px;
+      margin: 20px;
+    }
+
+    .footer h3 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .footer a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin: 8px 0;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+
+    .nav-link.active {
+      color: #00bfff;
+      font-weight: bold;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .contact-info p {
+      margin: 6px 0;
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-section {
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+    }
+   
+  
+    @media(max-width: 600px) {
+      .gallery img {
+        width: 100%;
+      }
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    } 
+  </style>
+ 
+</head>
+<body>
+  <nav class="navbar">
+        <div class="logo-container">
+            <img src="/image/logo.jpg" alt="Nagarcovil Builders Logo" class="logo">
+            <h1 class="brand-title">Nagarcovil Builders</h1>
+        </div>
+        </nav>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#enquiry">Enquiry</a>
+  <a href="#about">About Us</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#plans">Plan Pricing</a>
+</nav>
+<section id="home">
+  <h2>Welcome to Nagercoil Builders</h2>
+  <p>Your dream home starts here.</p>
+  <div class="gallery">
+    <img src="/image/Nagercoil Builders Website.png" alt="">
+    <img src="/image/home2.png" alt="">
+  </div>
+</section>
+ <div class="button-container">
+    <button class="btn book" onclick="location.href='https://nagercoilbuilders.com/'">Book Now</button>
+  </div>
+<section id="about">
+  <h2>About Us</h2>
+  <p>We are trusted builders in Nagercoil with 20+ years of experience.</p>
+  <div class="gallery">
+    <img src="/image/aboutus.png" alt="">
+    <img src="/image/aboutus1.png" alt="">
+    <div class="why-section">
+    <h1>Why Choose Nagarcoil Builders</h1>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-icon">👷‍♂️</div>
+        <div class="why-title">Experienced Team</div>
+        <div class="why-desc">Our expert team brings decades of combined construction experience to every project.</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🏗️</div>
+        <div class="why-title">Quality Construction</div>
+        <div class="why-desc">We use the highest-grade materials to ensure lasting durability and aesthetic appeal.</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🛠️</div>
+        <div class="why-title">Customizable Designs</div>
+        <div class="why-desc">We tailor every plan to your vision, making each project truly unique.</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <div class="why-title">Transparent Process</div>
+        <div class="why-desc">From consultation to delivery, we keep communication open and clear.</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">⏱️</div>
+        <div class="why-title">Timely Completion</div>
+        <div class="why-desc">Deadlines matter. We pride ourselves on delivering projects on time—every time.</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🏢</div>
+        <div class="why-title">In-House Experts</div>
+        <div class="why-desc">No outsourcing. Our architects, engineers, and builders are all part of our dedicated in-house team.</div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+ <section class="services-section">
+    <h1>Our Construction Services</h1>
+    <div class="services-grid">
+
+      <!-- Consulting -->
+      <div class="service-card">
+        <img src="/image/consulting.png" alt="Consulting">
+        <div class="service-content">
+          <div class="service-title">Consulting</div>
+          <div class="service-desc">Expert guidance from planning to execution for your dream project.</div>
+        </div>
+      </div>
+
+      <!-- Estimate -->
+      <div class="service-card">
+        <img src="/image/evalution.jpeg" alt="Estimate">
+        <div class="service-content">
+          <div class="service-title">Estimate</div>
+          <div class="service-desc">Accurate and transparent cost estimation to avoid budget surprises.</div>
+        </div>
+      </div>
+
+      <!-- Plan & Design -->
+      <div class="service-card">
+        <img src="/image/plan.png" alt="Plan and Design">
+        <div class="service-content">
+          <div class="service-title">Plan & Design</div>
+          <div class="service-desc">Creative and functional architectural planning tailored to your needs.</div>
+        </div>
+      </div>
+
+      <!-- Construction -->
+      <div class="service-card">
+        <img src="/image/construction.jpeg" alt="Construction">
+        <div class="service-content">
+          <div class="service-title">Construction</div>
+          <div class="service-desc">Reliable and high-quality construction services from foundation to finish.</div>
+        </div>
+      </div>
+
+      <!-- Floor Work -->
+      <div class="service-card">
+        <img src="/image/interior-desigen.png" alt="Floor Work">
+        <div class="service-content">
+          <div class="service-title">Floor Work</div>
+          <div class="service-desc">Durable and beautiful flooring options professionally installed.</div>
+        </div>
+      </div>
+
+      <!-- Painting Work -->
+      <div class="service-card">
+        <img src="image/services.png" alt="Painting Work">
+        <div class="service-content">
+          <div class="service-title">Painting Work</div>
+          <div class="service-desc">Interior and exterior painting to bring life and protection to your space.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section id="projects">
+  <h2>Our Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=60" alt="Modern Home">
+      <div class="project-title">Modern Home – Kanyakumari</div>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=60" alt="Villa">
+      <div class="project-title">Luxury Villa – Nagercoil</div>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=60" alt="Apartment">
+      <div class="project-title">Green Apartments – Tirunelveli</div>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60" alt="Commercial">
+      <div class="project-title">Commercial Complex – Nagercoil</div>
+    </div>
+  </div>
+
+  <!-- OUR MILESTONES -->
+  <h1>Nagercoil Builders</h1>
+  <p>Our Milestones Over the Years</p>
+</header>
+
+<div class="milestones" id="milestoneContainer">
+  <!-- JavaScript will populate this -->
+</div>
+<section id="plans">
+  <h2>Plan Pricing</h2>
+   <h1>Nagarcoil Builders Pricing Plans</h1>
+
+  <div class="pricing-container">
+
+    <!-- Plan 1 -->
+    <div class="pricing-card">
+      <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=800&q=60" alt="Basic Plan">
+      <div class="plan-details">
+        <div class="plan-title">Basic Plan</div>
+        <div class="plan-price">₹5 Lakhs</div>
+        <div class="star-rating" data-rating="3"></div>
+      </div>
+    </div>
+
+    <!-- Plan 2 -->
+    <div class="pricing-card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60" alt="Standard Plan">
+      <div class="plan-details">
+        <div class="plan-title">Standard Plan</div>
+        <div class="plan-price">₹10 Lakhs</div>
+        <div class="star-rating" data-rating="4"></div>
+      </div>
+    </div>
+
+    <!-- Plan 3 -->
+    <div class="pricing-card">
+      <img src="/image/renovation.png" alt="Premium Plan">
+      <div class="plan-details">
+        <div class="plan-title">Premium Plan</div>
+        <div class="plan-price">₹20 Lakhs</div>
+        <div class="star-rating" data-rating="5"></div>
+      </div>
+    </div>
+</section>
+ <h1>What Our Clients Say</h1>
+
+  <div class="review-container">
+
+    <!-- Review 1 -->
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1" class="review-img">
+      <div class="review-name">Rajesh Kumar</div>
+      <div class="star-rating" data-rating="5"></div>
+      <p class="review-text">
+        Exceptional quality and timely delivery. Nagor Covil Builders turned my dream home into reality!
+      </p>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client 2" class="review-img">
+      <div class="review-name">Priya Suresh</div>
+      <div class="star-rating" data-rating="4"></div>
+      <p class="review-text">
+        Professional team and transparent communication. Highly recommend for any construction needs!
+      </p>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Client 3" class="review-img">
+      <div class="review-name">Vikram Menon</div>
+      <div class="star-rating" data-rating="5"></div>
+      <p class="review-text">
+        Their design suggestions were amazing and the final build exceeded our expectations.
+      </p>
+    </div>
+
+  </div>
+<section id="enquiry">
+  <h2>Submit an Enquiry</h2>
+  <form id="enquiryForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="tel" name="phone" placeholder="Your Phone" required>
+    <select name="service" required>
+      <option value="">Select Service</option>
+      <option>Residential</option>
+      <option>Commercial</option>
+      <option>Renovation</option>
+      <option>Interior</option>
+    </select>
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Submit Enquiry</button>
+  </form>
+</section>
+
+<div id="popup">✅ Enquiry Submitted Successfully!</div>
+ 
+ <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Company Info -->
+      <div class="footer-section">
+        <h3>Nagor Covil Builders</h3>
+        <p>Building trust, one home at a time.</p>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" title="Facebook" onclick="openSocial('https://facebook.com')" />
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" title="Instagram" onclick="openSocial('https://instagram.com')" />
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" title="Twitter" onclick="openSocial('https://twitter.com')" />
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="footer-section">
+        <h3>Categories</h3>
+        <a href="#" class="nav-link active" onclick="setActive(this)">🏠 Home</a>
+        <a href="#" class="nav-link" onclick="setActive(this)">ℹ️ About Us</a>
+        <a href="#" class="nav-link" onclick="setActive(this)">🏗️ Projects</a>
+        <a href="#" class="nav-link" onclick="setActive(this)">Plan Pricing</a>
+        <a href="#" class="nav-link" onclick="setActive(this)">🛠️ Services</a>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section contact-info">
+        <h3>Contact</h3>
+         <p><strong>Address:</strong><br>📍123 Main Road,<br>Nagarkovil, Tamil Nadu</p>
+        <p><strong>Phone:</strong><br>📞+91 98765 43210</p>
+        <p><strong>Email:</strong><br>info@nagarcoilbuilders.com</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Nagor Covil Builders. All rights reserved.
+    </div>
+  </footer>
+<script>
+ document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const title = card.querySelector('.service-title').textContent;
+        alert(`You clicked: ${title}`);
+      });
+    });
+ const cards = document.querySelectorAll('.why-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.3 });
+   
+ document.querySelectorAll('.star-rating').forEach(div => {
+      const rating = parseInt(div.getAttribute('data-rating'));
+      let stars = '';
+      for (let i = 1; i <= 5; i++) {
+        stars += i <= rating ? '★' : '☆';
+      }
+      div.textContent = stars;
+    });
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      observer.observe(card);
+    });
+     document.querySelectorAll('.star-rating').forEach(div => {
+      const rating = parseInt(div.getAttribute('data-rating'));
+      div.innerHTML = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+    });
+   
+  document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('popup').classList.add('show');
+    setTimeout(() => {
+      document.getElementById('popup').classList.remove('show');
+      document.getElementById('enquiryForm').reset();
+    }, 3000);
+  });
+  
+    // Open social link in new tab
+    function openLink(url) {
+      window.open(url, '_blank');
+    }
+
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+   // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Open social link in a new tab
+    function openSocial(url) {
+      window.open(url, '_blank');
+    }
+
+    // Set active nav link
+    function setActive(el) {
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      el.classList.add('active');
+    }
+     const milestones = [
+    {
+      title: "Project Sunrise (2015)",
+      description: "Our first gated community in the heart of Nagercoil with 50+ villas.",
+      image: "image/milestone1.png"
+    },
+    {
+      title: "Green Residency (2018)",
+      description: "An eco-friendly apartment complex near Vadasery.",
+      image: "image/milestone2.png"
+    },
+    {
+      title: "Ocean View Heights (2020)",
+      description: "Luxury sea-facing apartments near Kanyakumari coast.",
+      image: "image/milestone3.png"
+    },
+    {
+      title: "Skyline Tower (2023)",
+      description: "Nagercoil's tallest residential building launched.",
+      image: "image/mileston4.png"
+    }
+  ];
+
+  const container = document.getElementById('milestoneContainer');
+
+  milestones.forEach(m => {
+    const div = document.createElement('div');
+    div.className = 'milestone';
+    div.innerHTML = `
+      <img src="${m.image}" alt="${m.title}">
+      <div class="milestone-content">
+        <h3>${m.title}</h3>
+        <p>${m.description}</p>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+   </script>
+</body>
+</html>
+
